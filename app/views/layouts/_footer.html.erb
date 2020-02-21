@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="conteiner">
+
+  
+    <% unless user_signed_in? %>
+      <%= render "devise/shared/links" %>
+    <% end %
+    <span>©︎2020 StudySupport.link</span>
+  </div>
+</footer>
+
