@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "SiteLayouts", type: :system do  
+RSpec.describe "SiteLayouts", type: :system do 
+   
   describe "home layout" do    
     it "contains root link" do
       visit root_path
