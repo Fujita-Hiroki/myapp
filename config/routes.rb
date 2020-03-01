@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   #get    '/login'
   #post   '/login'
   #delete '/logout'
-  #get    '/signup' 
+  # get     '/signup',   to: 'users#new'
+  get     'users/new'
 end
