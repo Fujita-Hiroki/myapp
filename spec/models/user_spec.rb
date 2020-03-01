@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "name" do
-    it "should be presence" do
+    it "should be present" do
       user.name = "  "
       expect(user).to be_invalid
     end
