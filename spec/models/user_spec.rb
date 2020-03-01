@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
   describe "name" do
     it "should be present" do
-      user.name = " "
+      user.name = "  "
       expect(user).to be_invalid
     end
 
@@ -47,8 +47,8 @@ RSpec.describe User, type: :model do
         user.email = "a" * 243 + "@example.com"
         expect(user).to be_valid
       end
-    end 
-      
+    end
+ 
     context "255 characters" do
       it "is too long" do
         user.email = "a" * 244 + "@example.com"
@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    it "should reject invalid adresses" do
+    it "should reject invalid addresses" do
       user.email = "user@example,com"
       expect(user).to be_invalid
 
@@ -89,7 +89,7 @@ RSpec.describe User, type: :model do
       user.email = "foo@bar+baz.com"
       expect(user).to be_invalid
     end
-    
+
     it "should be unique" do
       duplicate_user = user.dup
       duplicate_user.email = user.email.upcase
@@ -100,7 +100,7 @@ RSpec.describe User, type: :model do
     it "should be saved as lower-case" do
       user.email = "Foo@ExAMPle.CoM"
       user.save!
-      expect(user.reload.email).to eq "foo@example.com"
+      expect(user.reload.email).to eq 'foo@example.com'
     end
   end
 
