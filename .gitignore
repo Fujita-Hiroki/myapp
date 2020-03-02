@@ -29,3 +29,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+db/migrate/20200227063942_create_users.rb
+db/migrate/20200227163054_add_index_to_users_email.rb
+db/migrate/20200227163441_add_password_digest_to_users.rb
