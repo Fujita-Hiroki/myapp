@@ -107,15 +107,31 @@
 
 /* signup */
 
-.signup-title h4 {
-  font-weight: bold;
+.signup-title {
+  padding-left: 2rem;
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-top: -1.5rem;
+    }
 }
 
 .signup-container {
-  padding-top: 1rem;
-  .btn btn-info btn-lg form-submit {
-    width: 90%;
-  }
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 2rem;
 }
 
 #error_explanation {
@@ -126,11 +142,12 @@
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
+.field_with_errors .form-control {
+  border-color: red;
+}
+
+.alert-form-extend {
+  margin: 1rem;
 }
 
 /* footer */
