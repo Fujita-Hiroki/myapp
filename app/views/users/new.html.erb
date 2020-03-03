@@ -1,2 +1,28 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<div class="signup-title">
+  <h5>30秒で新規登録!!(無料)</h5>
+　<p>すでにStudySupportアカウントがある方は<a href="#">ログインする</a></p>
+</div>
+<div class="container signup-container">
+  <div class="row">
+    <div class="col">
+      <%= form_with(model: @user, url: signup_path, local: true) do |form| %>
+        <%= render 'shared/error_messages' %>
+ 
+        <%= form.label :name, "名前(ニックネーム)" %>
+        <%= form.text_field :name, class: 'form-control', placeholder: "ご自分の名前(またはニックネーム)" %>
+ 
+        <%= form.label :email, "メールアドレス" %>
+        <%= form.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+
+        <%= form.label :password, "パスワード(6文字以上)" %>
+        <%= form.password_field :password, class: 'form-control', placeholder: "半角英数字6文字以上" %>
+     
+        <%= form.label :password_confirmation, "パスワードの確認" %>
+        <%= form.password_field :password_confirmation, class: 'form-control', placeholder: "パスワード(再入力)" %>
+
+        <%= form.submit "登録する", class: "btn btn-info btn-lg form-submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>

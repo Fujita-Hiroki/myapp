@@ -105,6 +105,49 @@
   z-index: -1;  
 }
 
+.signup-title {
+  padding-left: 2rem;
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-top: -1.5rem;
+    }
+}
+
+.signup-container {
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin-bottom: 1rem;
+  }
+}
+
+.field_with_errors .form-control {
+  border-color: red;
+}
+
+.alert-form-extend {
+  margin: 1rem;
+}
+
 /* footer */
 
 footer {
