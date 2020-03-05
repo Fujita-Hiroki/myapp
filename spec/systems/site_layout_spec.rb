@@ -13,12 +13,12 @@ RSpec.describe "SiteLayouts", type: :system do
       expect(page).to have_link 'StudySupportの詳細へ', href: about_path
     end
     
-    it "ccontains lohgin link" do
+    it "contains login link" do
       visit root_path
       expect(page).to have_link 'ログイン', href: '#'
     end
 
-    it "ccontains sigunup link" do
+    it "contains sigunup link" do
       visit root_path
       expect(page).to have_link '新規登録', href: '#'
     end

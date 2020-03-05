@@ -32,3 +32,5 @@ yarn-debug.log*
 db/migrate/20200227063942_create_users.rb
 db/migrate/20200227163054_add_index_to_users_email.rb
 db/migrate/20200227163441_add_password_digest_to_users.rb
+spec/requests/users_request_spec.rb
+spec/systems/systems_layout_spec.rb
