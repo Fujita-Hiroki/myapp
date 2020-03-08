@@ -9,12 +9,27 @@
     </div>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
+      <% if logged_in? %>
         <li class="nav-item active">
-          <%= link_to "ログイン", login_path, class: "nav-item" %> <!-- img入れる png -->
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item" %> <!-- img入れる png -->
         </li>
-        <li class="nav-item active">
-          <%= link_to "新規登録", signup_path, class: "nav-item" %> <!-- img入れる png -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            プロフィール
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "過去にした質問", "#", class: "nav-item" %></li>
+            <li><%= link_to "編集・設定", '#', class: "nav-item" %></li>
+          </ul>
         </li>
+      <% else %>
+          <li class="nav-item active">
+            <%= link_to "ログイン", login_path, class: "nav-item" %> <!-- img入れる png -->
+          </li>
+          <li class="nav-item active">
+            <%= link_to "新規登録", signup_path, class: "nav-item" %> <!-- img入れる png -->
+          </li>
+      <% end %>
       </ul>
     </div>
   </nav>

@@ -11,11 +11,12 @@ RSpec.describe "UsersSignups", type: :request do
             user: {
               name:  "",
               email: "user@invalid",
-              password: "foo",
-              password_confirmation: "bar"
+              password: "pass",
+              password_confirmation: "word"
             }
           }
         }.not_to change(User, :count)
+        expect(is_logged_in?).to be_falsey
       end
     end
 
@@ -27,11 +28,12 @@ RSpec.describe "UsersSignups", type: :request do
             user: {
               name: "Example User",
               email: "user@example.com",
-              password: "foobar",
-              password_confirmation: "foobar"
+              password: "password",
+              password_confirmation: "password"
             }
           }
         }.to change(User, :count).by(1)
+        expect(is_logged_in?).to be_truthy
       end
     end
   end
