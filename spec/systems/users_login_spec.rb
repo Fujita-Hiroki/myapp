@@ -39,7 +39,7 @@ RSpec.describe "Logins", type: :system do
         fill_in 'メールアドレス', with: user.email
         fill_in '半角英数字6文字以上', with: 'password'
         find(".form-submit").click
-        expect(current_path).to eq user_path(User.last)
+        expect(current_path).to eq user_path(1)
         expect(page).to have_content 'ログアウト'
         expect(page).to have_content 'プロフィール'
       end
@@ -49,7 +49,7 @@ RSpec.describe "Logins", type: :system do
         fill_in 'メールアドレス', with: user.email
         fill_in '半角英数字6文字以上', with: 'password'
         find(".form-submit").click
-        expect(current_path).to eq user_path(User.last)
+        expect(current_path).to eq user_path(1)
         expect(page).to have_content 'ログアウト'
         expect(page).to have_content 'プロフィール'
         expect(page).not_to have_content 'ログイン'
@@ -63,7 +63,7 @@ RSpec.describe "Logins", type: :system do
       fill_in 'メールアドレス', with: user.email
       fill_in '半角英数字6文字以上', with: 'password'
       find(".form-submit").click
-      expect(current_path).to eq user_path(User.last)
+      expect(current_path).to eq user_path(1)
       expect(page).to have_content 'ログアウト'
       expect(page).to have_content 'プロフィール'
       expect(page).not_to have_content 'ログイン'

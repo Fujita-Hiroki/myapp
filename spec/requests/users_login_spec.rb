@@ -73,21 +73,21 @@ RSpec.describe "UsersLogins", type: :request do
         expect(request.fullpath).to eq '/'
       end
 
-      it "login with remember_me" do
+      it "logins with remember_me" do
         get login_path
         post_valid_information(1)
         expect(is_logged_in?).to be_truthy
         expect(cookies[:remember_token]).not_to be_empty
       end
 
-      it "login without remember_me" do
+      it "logins without remember_me" do
         get login_path
         post_valid_information(0)
         expect(is_logged_in?).to be_truthy
         expect(cookies[:remember_token]).to be_nil
       end
 
-      it "logout after login with remember_me" do
+      it "logouts after login with remember_me" do
         get login_path
         post_valid_information(1)
         expect(is_logged_in?).to be_truthy

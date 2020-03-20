@@ -23,7 +23,7 @@ RSpec.describe "UsersSignups", type: :system do
       fill_in '半角英数字6文字以上', with: 'password'
       fill_in 'パスワード(再入力)', with: 'password'
       click_on '登録する'
-      expect(current_path).to eq user_path(User.last)
+      expect(current_path).to eq user_path(1)
       expect(page).not_to have_selector '#error_explanation'
     end
   end
