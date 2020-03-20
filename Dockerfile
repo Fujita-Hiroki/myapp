@@ -28,5 +28,5 @@ COPY Gemfile.lock $APP_ROOT/Gemfile.lock
 RUN bundle install
 
 COPY . $APP_ROOT
-
+RUN bundle exec rails assets:precompile
 RUN mkdir -p tmp/sockets
