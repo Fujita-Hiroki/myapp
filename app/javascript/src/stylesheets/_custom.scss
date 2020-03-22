@@ -186,6 +186,25 @@
   margin-left: 1.1rem;
 }
 
+/* edit */
+
+.edit-title {
+  padding-left: 2rem;
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-top: -1.5rem;
+    }
+}
+
+.edit-container {
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
 /* footer */
 
 footer {
