@@ -8,21 +8,23 @@ RSpec.describe "UsersSignups", type: :request do
     post signup_path, params: {
       user: {
         name: "",
-        email "user@invalid",
-        password "foo"
-        password_confirmation "bar"
+        email: "user@invalid",
+        password: "foo",
+        password_confirmation: "bar"
       }
     }
+  end
 
   def post_valid_information
     post signup_path, params: {
       user: {
         name: "Example User",
-        email "user@example.com",
-        password "password"
-        password_confirmation "password"
+        email: "user@example.com",
+        password: "password",
+        password_confirmation: "password"
       }
     }
+  end
 
   describe "GET /signup" do
     context "invalid signup information" do
