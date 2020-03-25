@@ -1,0 +1,4 @@
+<h1>StudySupport</h1>
+<p><%= @user.name %>さんへ</p>
+<p>StudySupportにご登録ありがとうございます。下記のリンクをクリックして登録を完了してください。</p>
+<%= link_to "登録完了へ", edit_account_activation_url(@user.activation_token, email: @user.email) %>
