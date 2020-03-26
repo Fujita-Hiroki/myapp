@@ -37,6 +37,8 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem "factory_bot_rails"
+  # 下記のgemは本当は導入したくないが、reset_tokenが仮属性のためspec内でletできないため導入
+  gem 'rails-controller-testing'
 end
 
 group :development do
