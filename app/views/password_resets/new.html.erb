@@ -1,0 +1,19 @@
+<% provide(:title, 'Forgot password') %>
+<div class="forgotpass-title">
+  <h5>パスワード再設定</h5>
+　<p>パスワードを思い出した方は<%= link_to "こちら", login_path %></p>
+</div>
+<div class="container forgotpass-container">
+  <div class="row">
+    <div class="col">
+      <%= form_with(scope: :password_reset, url: password_resets_path, local: true) do |form| %>
+  
+        <%= form.label :email, "メールアドレス" %>
+        <%= form.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+
+        <%= form.submit "送信する", class: "btn btn-info btn-lg form-submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
