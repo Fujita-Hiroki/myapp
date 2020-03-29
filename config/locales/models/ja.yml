@@ -2,9 +2,15 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      micropost: 投稿
     attributes:
       user:
         name: ご自分の名前(またはニックネーム)
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(再入力)
+      micropost:
+        content: メモ
+        picture: 画像
+        user_id: ユーザーID
+        only_user_id: 入力欄
