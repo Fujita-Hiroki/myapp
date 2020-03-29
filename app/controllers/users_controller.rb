@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.page(params[:page]).per(10)
   end
 
   def new
@@ -31,9 +32,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = 'プロフィールの更新に成功しました'
-      redirect_to @user # redirect_to edit_user_path(@user) ではないのか?
+      redirect_to @user
     else
-      flash.now[:danger] = 'プロフィールの編集に失敗しました'
+      flash.now[:danger] = 'プロフィールの更新に失敗しました'
       redirect_to edit_user_path(@user)
     end
   end

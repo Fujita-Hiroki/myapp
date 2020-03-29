@@ -1,1 +1,27 @@
-<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.name) %>
+<div class="show-title">
+  <h5>過去にした質問</h5>
+</div>
+<div class="container show-container">
+  <div class="row">
+    <div class="col-md-4">
+      <h2>
+        # <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <% if @user.microposts.any? %>
+        <h3>質問一覧 (<%= @user.microposts.count %>)</h3>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
+        <%= paginate @microposts %>
+    　<% else %>
+  　　  <h2>過去に質問したことがありません</h2>
+      <% end %>
+    </div>
+  </div>
+</div>
