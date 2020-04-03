@@ -21,6 +21,7 @@ end
 
 users = User.order(:created_at).take(5)
 50.times do
-  content = Faker::Lorem.sentence(6)
-  users.each { |user| user.microposts.create!(content: content) }
+  understanding = Faker::Lorem.sentence(6)
+  problem = Faker::Lorem.sentence(6)
+  users.each { |user| user.microposts.create!(understanding: understanding, problem: problem) }
 end

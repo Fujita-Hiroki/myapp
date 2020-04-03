@@ -10,7 +10,8 @@ ja:
         password: パスワード
         password_confirmation: パスワード(再入力)
       micropost:
-        content: メモ
+        understanding: あなたの考えや答え
+        problem: 不安な点や確認したいこと
         picture: 画像
         user_id: ユーザーID
         only_user_id: 入力欄

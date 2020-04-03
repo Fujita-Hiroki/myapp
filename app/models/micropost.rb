@@ -3,7 +3,8 @@ class Micropost < ApplicationRecord
   has_one_attached :picture
   default_scope { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :content, length: { maximum: 2000 }
+  validates :understanding, length: { maximum: 1000 }
+  validates :problem, length: { maximum: 1000 }
   validates :only_user_id, presence: true
   validate :validate_picture
 
@@ -13,7 +14,7 @@ class Micropost < ApplicationRecord
 
   private
     def only_user_id
-      content.presence or picture.attached?
+      understanding.presence or problem.presence or picture.attached?
     end
 
     def validate_picture
