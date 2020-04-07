@@ -1,6 +1,6 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-  has_one_attached :picture
+  has_many_attached :pictures
   default_scope { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :understanding, length: { maximum: 1000 }
@@ -9,7 +9,7 @@ class Micropost < ApplicationRecord
   validate :validate_picture
 
   def resize_picture
-    return self.picture.variant(resize: '200x200').processed
+    return self.picture.variant(resize: '1000x1000').processed
   end
 
   private

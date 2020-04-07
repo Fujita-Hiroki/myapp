@@ -36,41 +36,7 @@
   }
 }
 
-.subject {
-  padding-left: 3rem;
-  h6 {
-    padding: .25em 0 .25em .75em;
-    border-left: 6px solid #008080;
-  }
-}  
 
-.discription-img-container {
-  position: relative;
-  margin: 1em auto;
-  padding: 1em;
-  
-  border: 1px solid #ccc;
-  h4 {
-    font-size: 0.75rem;
-  }
-  :hover {
-    background-color: #f1f1f1bb;
-  }
-}
-
-.discription-img {
-  width: 50%;
-  height: 40%;
-}
-
-.img-link {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 /* about */
 
@@ -137,10 +103,6 @@
   font-weight: bold;
 }
 
-.error_massages {
-  text-align: center;
-}
-
 .form-control {
   margin-bottom: 2rem;
   font-size: 0.8rem;
@@ -149,6 +111,12 @@
 .form-submit {
   width: 100%;
   margin-top: 2rem;
+}
+
+/* error messages */
+
+.error_massages {
+  text-align: center;
 }
 
 #error_explanation {
@@ -262,13 +230,13 @@
     text-align: center;
     margin-bottom: 0.5rem;
   }
-    .microposts {
-      li {
-        padding: 2rem;
-        margin: 0.5rem;
-        border: 1px solid #e8e8e8;
-      }
+  .microposts {
+    li {
+      padding: 2rem;
+      margin: 0.5rem;
+      border: 1px solid #e8e8e8;
     }
+  }
 }
 
 /* pagination */
@@ -285,6 +253,71 @@
 
 .pagination>li>a:hover {        
   border-radius: 50%;
+}
+
+/* index microposts */
+
+.index-container {
+  .microposts {
+    li {
+      padding: 2rem;
+      margin: 0.5rem;
+      border: 1px solid #e8e8e8;
+    }
+  }
+  h6 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.btn-circle-3d {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff8181;
+  color: #FFF;
+  width: 80px;
+  height: 80px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #bd6565;
+  transition: .4s;
+}
+
+.btn-circle-3d:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
+
+/* question microposts */
+
+.question-title {
+  padding-left: 2rem;
+    h5 {
+      font-weight: bold;
+    }
+}
+
+.question-container {
+  padding-top: 4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 2rem;
 }
 
 /* footer */

@@ -1,0 +1,24 @@
+<% provide(:title, 'Question') %>
+<div class="question-title">
+  <h5>質問</h5>
+</div>
+<div class="container question-container">
+  <div class="row">
+    <div class="col">
+      <%= form_with(model: @micropost, url: microposts_path, local: true) do |form| %>
+        <%= render 'shared/error_messages', object: form.object %>
+ 
+        <%= form.label :understanding, "あなたの考えや答え" %>
+        <%= form.text_area :understanding, class: 'form-control', placeholder: "どこまで理解できているか・あなたの考え・答えなどを入力してください" %>
+ 
+        <%= form.label :problem, "不安な点や確認したいこと" %>
+        <%= form.text_area :problem, class: 'form-control', placeholder: "具体的に分からないこと・不安な点・確認したいことなどを入力してください" %>
+
+        <%= form.label :picture, "添付画像" %>
+        <%= form.file_field :picture, multiple: true %>
+     
+        <%= form.submit "質問する", class: "btn btn-info btn-lg form-submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
