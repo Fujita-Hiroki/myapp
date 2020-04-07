@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      micropost: 投稿
+      micropost: 質問
     attributes:
       user:
         name: ご自分の名前(またはニックネーム)
@@ -12,7 +12,7 @@ ja:
       micropost:
         understanding: あなたの考えや答え
         problem: 不安な点や確認したいこと
-        picture: 画像
+        picture: 添付画像
         user_id: ユーザーID
         only_user_id: 入力欄
   views:

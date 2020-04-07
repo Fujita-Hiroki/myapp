@@ -16,6 +16,8 @@ gem 'faker'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "aws-sdk-s3", require: false
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

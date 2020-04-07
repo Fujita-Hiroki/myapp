@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col">
       <%= form_with(model: @user, url: signup_path, local: true) do |form| %>
-        <%= render 'shared/error_messages' %>
+        <%= render 'shared/error_messages', object: form.object %>
  
         <%= form.label :name, "名前(ニックネーム)" %>
         <%= form.text_field :name, class: 'form-control', placeholder: "ご自分の名前(またはニックネーム)" %>
