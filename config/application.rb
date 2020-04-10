@@ -24,6 +24,6 @@ module Myapp
     config.generators.helper              = false
     # config.generators.helper_specs      = false
     config.generators.view_specs          = false
-
+    config.time_zone = 'Tokyo'
   end
 end

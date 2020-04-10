@@ -35,3 +35,4 @@ db/migrate/20200227163441_add_password_digest_to_users.rb
 spec/requests/users_request_spec.rb
 spec/systems/systems_layout_spec.rb
 app/javascript/src/application.scss
+app/views/microposts/_index.html.erb

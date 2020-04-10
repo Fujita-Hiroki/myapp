@@ -15,7 +15,7 @@
         <%= form.text_area :problem, class: 'form-control', placeholder: "具体的に分からないこと・不安な点・確認したいことなどを入力してください" %>
 
         <%= form.label :picture, "添付画像" %>
-        <%= form.file_field :picture, multiple: true %>
+        <%= form.file_field :picture %>
      
         <%= form.submit "質問する", class: "btn btn-info btn-lg form-submit" %>
       <% end %>

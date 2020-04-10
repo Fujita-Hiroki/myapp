@@ -36,7 +36,69 @@
   }
 }
 
+.micropost {
+  margin-bottom: 0.5rem;
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
 
+.box {
+  margin: 1.5rem;
+  font-size: 0.7rem;
+}
+
+.item {
+  color: #858585bb;
+}
+
+.item:before {
+  content: "\025bc";
+}
+
+.sentence {
+  margin: 1.5rem 0rem;
+}
+
+.timestamp {
+  margin-top: 2rem;
+}
+
+.timestamp:before {
+  content:"\0ab";
+}
+
+.timestamp:after {
+  content:"\0bb";
+}
+
+.user {
+  float: right;
+}
+
+.btn-circle-3d {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff8181;
+  color: #FFF;
+  width: 80px;
+  height: 80px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  overflow: hidden;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #bd6565;
+  transition: .4s;
+}
+
+.btn-circle-3d:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
+}
 
 /* about */
 
@@ -253,46 +315,6 @@
 
 .pagination>li>a:hover {        
   border-radius: 50%;
-}
-
-/* index microposts */
-
-.index-container {
-  .microposts {
-    li {
-      padding: 2rem;
-      margin: 0.5rem;
-      border: 1px solid #e8e8e8;
-    }
-  }
-  h6 {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-}
-
-.btn-circle-3d {
-  display: inline-block;
-  text-decoration: none;
-  background: #ff8181;
-  color: #FFF;
-  width: 80px;
-  height: 80px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  font-weight: bold;
-  overflow: hidden;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #bd6565;
-  transition: .4s;
-}
-
-.btn-circle-3d:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  border-bottom: none;
 }
 
 /* question microposts */
