@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+    <div class="col-sm-10">
+      <div class="micropost border">
+        <div class="box">
+          <div class="item">
+            あなたの考えや答え
+          </div>
+          <div class="sentence">
+            <%= @micropost.understanding %>
+          </div>
+          <div class="item">
+            不安な点や確認したいこと
+          </div>
+          <div class="sentence">
+            <%= @micropost.problem %>
+          </div>
+          <div class="picture">
+            <%= @micropost.picture%>
+          </div>
+          <div class="timestamp">
+            <%= @micropost.created_at.strftime("%m/%d %H:%M") %>
+              <span class="user"><%= @micropost.user %></span> 
+          </div>
+        </div>  
+      </div>
+    </div>
+  <div class="col-sm-1">
+  </div>
+</div>

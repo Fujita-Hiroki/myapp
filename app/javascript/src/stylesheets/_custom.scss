@@ -36,7 +36,12 @@
   }
 }
 
-.micropost {
+.no-line {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.index-micropost {
   margin-bottom: 0.5rem;
   &:hover {
     background-color: #f3f3f3;
@@ -74,30 +79,6 @@
 
 .user {
   float: right;
-}
-
-.btn-circle-3d {
-  display: inline-block;
-  text-decoration: none;
-  background: #ff8181;
-  color: #FFF;
-  width: 80px;
-  height: 80px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  font-weight: bold;
-  overflow: hidden;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  border-bottom: solid 3px #bd6565;
-  transition: .4s;
-}
-
-.btn-circle-3d:active {
-  -webkit-transform: translateY(2px);
-  transform: translateY(2px);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  border-bottom: none;
 }
 
 /* about */
@@ -280,25 +261,8 @@
 
 /* show microposts */
 
-.show-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-}
-
-.show-container {
-  h6 {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .microposts {
-    li {
-      padding: 2rem;
-      margin: 0.5rem;
-      border: 1px solid #e8e8e8;
-    }
-  }
+.micropost {
+  margin-bottom: 0.5rem;
 }
 
 /* pagination */
