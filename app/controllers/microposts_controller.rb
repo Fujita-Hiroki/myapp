@@ -3,6 +3,7 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def show
+    @micropost = Micropost.find(params[:id])
   end
 
   def new
