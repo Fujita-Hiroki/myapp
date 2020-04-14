@@ -5,13 +5,13 @@
         あなたの考えや答え
       </div>
       <div class="sentence">
-        <%= post.understanding %>
+        <%= simple_format(post.understanding) %>
       </div>
       <div class="item">
         不安な点や確認したいこと
       </div>
       <div class="sentence">
-        <%= post.problem %>
+        <%= simple_format(post.problem) %>
       </div>
       <div class="picture">
         <%= post.picture%>

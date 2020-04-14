@@ -2,19 +2,22 @@
   <div class="col-sm-1">
   </div>
     <div class="col-sm-10">
+      <div class="text-right">
+        <%= link_to "編集する", edit_micropost_path, class: "btn btn-outline-primary" %>
+      </div>
       <div class="micropost border">
         <div class="box">
           <div class="item">
             あなたの考えや答え
           </div>
           <div class="sentence">
-            <%= @micropost.understanding %>
+            <%= simple_format(@micropost.understanding) %>
           </div>
           <div class="item">
             不安な点や確認したいこと
           </div>
           <div class="sentence">
-            <%= @micropost.problem %>
+            <%= simple_format(@micropost.problem) %>
           </div>
           <div class="picture">
             <%= @micropost.picture%>
