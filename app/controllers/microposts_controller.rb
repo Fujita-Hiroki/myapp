@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def show
     @micropost = Micropost.find(params[:id])
@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "質問をしました"
-      redirect_to current_user
+      redirect_to root_url
     else
       @feed = []
       render 'microposts/new'
@@ -48,7 +48,7 @@ class MicropostsController < ApplicationController
 
   private
     def micropost_params
-      params.require(:micropost).permit(:understnding, :problem, :picture)
+      params.require(:micropost).permit(:understanding, :problem, :picture)
     end
 
     def correct_user
