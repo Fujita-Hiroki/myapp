@@ -15,6 +15,11 @@ ja:
         picture: 添付画像
         user_id: ユーザーID
         only_user_id: 入力欄
+      comment:
+        comment: 回答
+        picture: 添付画像
+        user_id: ユーザーID
+        only_micropost_id: 入力欄
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
