@@ -1,0 +1,19 @@
+<div class="form-comment">
+  <div class="container answer-container">
+    <div class="row">
+      <div class="col">
+        <%= form_with(model: [@micropost, @comment], local: true) do |form| %>
+          <%= render 'shared/error_messages', object: form.object %>
+  
+          <%= form.label :comment, "回答", class: 'comment-label' %>
+          <%= form.text_area :comment, class: 'form-control', placeholder: "質問への回答やコメントを入力してください" %>
+
+          <%= form.label :picture, "添付画像" %>
+          <%= form.file_field :picture %>
+      
+          <%= form.submit "回答する", class: "btn btn-info btn-lg form-submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

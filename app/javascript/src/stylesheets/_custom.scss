@@ -269,6 +269,10 @@
   margin-bottom: 0.5rem;
 }
 
+.comment-index {
+  margin: 4rem 0rem 2rem 0rem;
+}
+
 /* pagination */
 
 .pagination>li>a {          
@@ -307,6 +311,17 @@
 
 .form-submit {
   width: 100%;
+  margin-top: 2rem;
+}
+
+/* comment */
+
+.form-comment {
+  margin-top: 4rem;
+  border-top: solid gray;
+}
+
+.comment-label {
   margin-top: 2rem;
 }
 

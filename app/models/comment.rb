@@ -1,12 +1,10 @@
-class Micropost < ApplicationRecord
+class Comment < ApplicationRecord
   belongs_to :user
+  belongs_to :micropost
   has_one_attached :picture
-  has_many :comments, dependent: :destroy
-  default_scope { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :understanding, length: { maximum: 1000 }
-  validates :problem, length: { maximum: 1000 }
-  validates :only_user_id, presence: true
+  validates :comment, length: { maximum: 1000 }
+  validates :only_micropost_id, presence: true
   validate :validate_picture
 
   def resize_picture
@@ -14,8 +12,8 @@ class Micropost < ApplicationRecord
   end
 
   private
-    def only_user_id
-      understanding.presence or problem.presence or picture.attached?
+    def only_micropost_id
+      comment.presence or picture.attached?
     end
 
     def validate_picture
