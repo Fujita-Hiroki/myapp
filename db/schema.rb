@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_072326) do
+ActiveRecord::Schema.define(version: 2020_04_19_234213) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2020_04_16_072326) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "micropost_tag_relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "micropost_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["micropost_id"], name: "index_micropost_tag_relationships_on_micropost_id"
+    t.index ["tag_id"], name: "index_micropost_tag_relationships_on_tag_id"
+  end
+
   create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "understanding"
     t.string "picture"
@@ -53,6 +62,12 @@ ActiveRecord::Schema.define(version: 2020_04_16_072326) do
     t.text "problem"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "subject", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -72,5 +87,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_072326) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "microposts"
   add_foreign_key "comments", "users"
+  add_foreign_key "micropost_tag_relationships", "microposts"
+  add_foreign_key "micropost_tag_relationships", "tags"
   add_foreign_key "microposts", "users"
 end
