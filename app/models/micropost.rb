@@ -2,12 +2,15 @@ class Micropost < ApplicationRecord
   belongs_to :user
   has_one_attached :picture
   has_many :comments, dependent: :destroy
+  has_many :micropost_tag_relationships, dependent: :destroy
+  has_many :tags, through: :micropost_tag_relationships
   default_scope { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :understanding, length: { maximum: 1000 }
   validates :problem, length: { maximum: 1000 }
   validates :only_user_id, presence: true
   validate :validate_picture
+  validates :tag_ids, presence: true
 
   def resize_picture
     return self.picture.variant(resize: '1000x1000').processed

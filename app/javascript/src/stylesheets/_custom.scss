@@ -261,6 +261,10 @@
 
 /* show microposts */
 
+.tag-subject {
+  font-weight: bold;
+}
+
 .text-right {
   margin-bottom: 0.5rem;
 }
@@ -307,6 +311,16 @@
 .form-control {
   margin-bottom: 2rem;
   font-size: 0.8rem;
+}
+
+.form-picture {
+  margin-bottom: 2rem;
+}
+
+.check-box {
+  p {
+    margin-bottom: 1rem;
+  }
 }
 
 .form-submit {

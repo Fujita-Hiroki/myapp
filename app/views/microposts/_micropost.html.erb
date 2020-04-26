@@ -1,5 +1,8 @@
 <%= link_to micropost_path(post), class: "no-line" do %>
   <div class="index-micropost border">
+    <% post.tags.each do |tag| %>
+      <% tag.subject %>
+    <% end %>   
     <div class="box">
       <div class="item">
         あなたの考えや答え
