@@ -45,12 +45,12 @@ class MicropostsController < ApplicationController
   def destroy
     @micropost.destroy
     flash[:success] = "質問が削除されました"
-    redirect_to current_user
+    redirect_back(fallback_location: root_path)
   end
 
   private
     def micropost_params
-      params.require(:micropost).permit(:understanding, :problem, :picture)
+      params.require(:micropost).permit(:understanding, :problem, :picture, tag_ids: [])
     end
 
     def correct_user

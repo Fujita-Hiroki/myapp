@@ -11,6 +11,15 @@
       <div class="col-sm-2">
         <%= link_to "質問する", new_micropost_path, class: "btn btn-outline-primary" %>
           <p>科目</p>
+          <%= form_with url: root_path, method: :get, local: true, class: "search-form" do |form| %>
+            <%= select_tag :tag_id,
+                              options_from_collection_for_select(Tag.all, :id, :subject, params[:tag_id]),
+                              {
+                                  prompt: 'すべての科目',
+                                  onchange: 'submit(this.form);'
+                              }
+             %>
+          <% end %>  
       </div>
       <div class="col-sm-8">
         <%= render partial: '/microposts/micropost', collection: @feed, as: "post" %>
@@ -24,6 +33,3 @@
     </div>
   </div>
 </main>
-
-
-
