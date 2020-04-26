@@ -50,7 +50,7 @@ class MicropostsController < ApplicationController
 
   private
     def micropost_params
-      params.require(:micropost).permit(:understanding, :problem, :picture, tag_ids: [])
+      params.require(:micropost).permit(:understanding, :problem, pictures: [], tag_ids: [])
     end
 
     def correct_user
