@@ -16,9 +16,11 @@
       <div class="sentence">
         <%= simple_format(post.problem) %>
       </div>
+      <% if post.pictures.attached? %>
       <div class="picture">
-        <%= post.picture%>
+        <%= image_tag post.resize_pictures %>
       </div>
+      <% end %>
       <div class="timestamp">
         <%= post.created_at.strftime("%m/%d %H:%M") %>
           <span class="user"><%= post.user.name %></span> 

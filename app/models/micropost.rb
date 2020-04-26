@@ -13,7 +13,7 @@ class Micropost < ApplicationRecord
   validates :tag_ids, presence: true
 
   def resize_pictures
-    return self.pictures.variant(resize: '1000x1000').processed
+    return self.pictures.variant(resize: '100x100').processed
   end
 
   private
