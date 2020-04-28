@@ -23,7 +23,12 @@
       <% end %>
       <div class="timestamp">
         <%= post.created_at.strftime("%m/%d %H:%M") %>
-          <span class="user"><%= post.user.name %></span> 
+          <span class="user"><%= post.user.name %></span>
+        <% if post.user.avatar.attached? %>
+          <%= image_tag post.user.avatar, size:"20x20", class:"avatar-circle float-right" %>
+        <% else %>
+          <%= image_tag ("default.png"), size:"20x20", class:"avatar-circle float-right" %>
+        <% end %>
       </div>
     </div>
   </div>
