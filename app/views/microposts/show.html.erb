@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-sm-1">
+  <div class="col-sm-2">
   </div>
-    <div class="col-sm-10">
+    <div class="col-sm-8">
     <div class="tag-subject">
       <% @micropost.tags.each do |tag| %>
         <span class="badge badge-light"><%= tag.subject %>の質問</span>
@@ -30,6 +30,11 @@
           <div class="timestamp">
             <%= @micropost.created_at.strftime("%m/%d %H:%M") %>
               <span class="user"><%= @micropost.user.name %></span> 
+            <% if @micropost.user.avatar.attached? %>
+              <%= image_tag @micropost.user.avatar, size:"20x20", class:"avatar-circle float-right" %>
+            <% else %>
+              <%= image_tag ("default.png"), size:"20x20", class:"avatar-circle float-right" %>
+            <% end %>
           </div>
         </div>  
       </div>
@@ -39,6 +44,6 @@
         <%= render '/comments/comment' %>
         <%= render '/comments/form' %>
     </div>
-  <div class="col-sm-1">
+  <div class="col-sm-2">
   </div>
 </div>

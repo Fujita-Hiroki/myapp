@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :comments
+  has_one_attached :avatar
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -11,6 +12,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password    
   validates :password, presence: true, length: { minimum: 6 } , allow_nil: true
+  validate :validate_avatar
 
 
   class << self
@@ -70,5 +72,15 @@ class User < ApplicationRecord
     def create_activation_digest
       self.activation_token = User.new_token
       self.activation_digest = User.digest(activation_token)
+    end
+
+    def validate_avatar
+      if avatar.attached?
+        if !avatar.content_type.in?(%('image/jpeg image/jpg image/png image/gif'))
+          errors.add(:avatar, 'はjpeg, jpg, png, gif以外のユーザー画像登録ができません')
+        elsif avatar.blob.byte_size > 5.megabytes
+          errors.add(:avatar, "のサイズが5MBを超えています")
+        end
+      end
     end
 end
