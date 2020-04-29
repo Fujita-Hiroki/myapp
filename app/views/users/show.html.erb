@@ -1,31 +1,30 @@
 <% provide(:title, @user.name) %>
-<div class="show-title">
-  <h5>過去にした質問</h5>
-</div>
-<div class="container show-container">
   <div class="row">
-    <div class="col-sm-4">
-      <h7><%= @user.name %></h7>
-      <div class="avatar_prev">
-        <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar, size:"50x50", class:"avatar-circle" %>
-        <% else %>
-          <%= image_tag ("default.png"), size:"50x50", class:"avatar-circle" %>
-        <% end %>
-      </div>
+    <div class="col-1 col-md-2">
     </div>
-    <div class="col-sm-8">
+    <div class="col-10 col-md-8">
+      <div class="avatar">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, size:"150x150", class:"avatar-circle" %>
+        <% else %>
+          <%= image_tag ("default.png"), size:"150x150", class:"avatar-circle" %>
+        <% end %>
+        <h5><%= @user.name %></h5>
+      </div>
       <% if @user.microposts.any? %>
-        <h6>質問一覧 (<%= @user.microposts.count %>)</h6>
+        <div class="user-post-index">
+          <h6>質問一覧 (<%= @user.microposts.count %>)</h6>
+        </div>
         <ol class="microposts justify-content-center">
           <%= render partial: '/microposts/micropost', collection: @feed, as: "post" %>
         </ol>
         <div class="pagination justify-content-center">
           <%= paginate @feed %>
         </div>
-    　<% else %>
-  　　  <h7>過去に質問したことがありません</h7>
+  　  <% else %>
+　　    <h7>過去に質問したことがありません</h7>
       <% end %>
+    </div
+    <div class="col-1 col-md-2">
     </div>
   </div>
-</div>

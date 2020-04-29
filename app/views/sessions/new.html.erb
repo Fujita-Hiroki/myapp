@@ -1,12 +1,12 @@
 <% provide(:title, 'Log in') %>
-<div class="login-title">
-  <h5>StudySupportにログイン</h5>
-　<p>StudySupportが初めての方は<%= link_to "新規登録する(無料)", signup_path %></p>
-　<p>パスワードを忘れた方は<%= link_to "こちら", new_password_reset_path %></p>
-</div>
-<div class="container login-container">
+<div class="container">
   <div class="row">
     <div class="col">
+      <div class="title">
+        <h5>StudySupportにログイン</h5>
+　      <p>StudySupportが初めての方は<%= link_to "新規登録する(無料)", signup_path %></p>
+　      <p>パスワードを忘れた方は<%= link_to "こちら", new_password_reset_path %></p>
+      </div>
       <%= form_with(scope: :session, url: login_path, local: true) do |form| %>
   
         <%= form.label :email, "メールアドレス" %>
