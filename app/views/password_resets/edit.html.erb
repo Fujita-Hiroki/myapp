@@ -1,10 +1,10 @@
 <% provide(:title, 'Reset password') %>
-<div class="resetpass-title">
-  <h5>パスワード再設定</h5>
-</div>
-<div class="container resetpass-container">
+<div class="container">
   <div class="row">
     <div class="col">
+      <div class="title">
+        <h5>パスワード再設定</h5>
+      </div>
       <%= form_with(model: @user, url: password_resets_path(params[:id]), local: true) do |form| %>
         <%= render 'shared/error_messages' %>
 

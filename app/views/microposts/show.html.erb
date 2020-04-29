@@ -1,49 +1,49 @@
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-1 col-md-2">
   </div>
-    <div class="col-sm-8">
-    <div class="tag-subject">
-      <% @micropost.tags.each do |tag| %>
-        <span class="badge badge-light"><%= tag.subject %>の質問</span>
-      <% end %> 
+  <div class="col-10 col-md-8">
+    <div class="text-right">
+      <%= link_to "編集する", edit_micropost_path, class: "btn btn-outline-primary" %>
     </div>
-      <div class="text-right">
-        <%= link_to "編集する", edit_micropost_path, class: "btn btn-outline-primary" %>
+    <div class="micropost border">
+      <div class="tag-subject">
+        <% @micropost.tags.each do |tag| %>
+          <span class="badge badge-light"><%= tag.subject %>の質問</span>
+        <% end %> 
       </div>
-      <div class="micropost border">
-        <div class="box">
-          <div class="item">
-            あなたの考えや答え
-          </div>
-          <div class="sentence">
-            <%= simple_format(@micropost.understanding) %>
-          </div>
-          <div class="item">
-            不安な点や確認したいこと
-          </div>
-          <div class="sentence">
-            <%= simple_format(@micropost.problem) %>
-          </div>
-          <div class="picture">
-            <%= @micropost.picture%>
-          </div>
-          <div class="timestamp">
-            <%= @micropost.created_at.strftime("%m/%d %H:%M") %>
-              <span class="user"><%= @micropost.user.name %></span> 
-            <% if @micropost.user.avatar.attached? %>
-              <%= image_tag @micropost.user.avatar, size:"20x20", class:"avatar-circle float-right" %>
-            <% else %>
-              <%= image_tag ("default.png"), size:"20x20", class:"avatar-circle float-right" %>
-            <% end %>
-          </div>
-        </div>  
-      </div>
-      <div class="comment-index">
-        回答一覧
-      </div>
-        <%= render '/comments/comment' %>
-        <%= render '/comments/form' %>
+      <div class="box">
+        <div class="item">
+          あなたの考えや答え
+        </div>
+        <div class="sentence">
+          <%= simple_format(@micropost.understanding) %>
+        </div>
+        <div class="item">
+          不安な点や確認したいこと
+        </div>
+        <div class="sentence">
+          <%= simple_format(@micropost.problem) %>
+        </div>
+        <div class="picture">
+          <%= @micropost.picture%>
+        </div>
+        <div class="timestamp">
+          <%= @micropost.created_at.strftime("%m/%d %H:%M") %>
+            <span class="user"><%= @micropost.user.name %></span> 
+          <% if @micropost.user.avatar.attached? %>
+            <%= image_tag @micropost.user.avatar, size:"20x20", class:"avatar-circle float-right" %>
+          <% else %>
+            <%= image_tag ("default.png"), size:"20x20", class:"avatar-circle float-right" %>
+          <% end %>
+        </div>
+      </div>  
     </div>
-  <div class="col-sm-2">
+    <div class="comment-index">
+      回答一覧
+    </div>
+      <%= render '/comments/comment' %>
+      <%= render '/comments/form' %>
+  </div>
+  <div class="col-1 col-md-2">
   </div>
 </div>

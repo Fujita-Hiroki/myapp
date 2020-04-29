@@ -1,10 +1,10 @@
 <% provide(:title, 'Question') %>
-<div class="question-title">
-  <h5>質問</h5>
-</div>
-<div class="container question-container">
+<div class="container">
   <div class="row">
     <div class="col">
+      <div class="title">
+        <h5>質問</h5>
+      </div>
       <%= form_with(model: @micropost, url: microposts_path, local: true) do |form| %>
         <%= render 'shared/error_messages', object: form.object %>
         

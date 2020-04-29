@@ -1,11 +1,11 @@
 <% provide(:title, 'Sign up') %>
-<div class="signup-title">
-  <h5>30秒で新規登録(無料)</h5>
-　<p>すでにStudySupportアカウントがある方は<%= link_to "ログインする", login_path %></p>
-</div>
-<div class="container signup-container">
+<div class="container">
   <div class="row">
     <div class="col">
+      <div class="title">
+        <h5>30秒で新規登録(無料)</h5>
+　      <p>すでにStudySupportアカウントがある方は<%= link_to "ログインする", login_path %></p>
+      </div>
       <%= form_with(model: @user, url: signup_path, local: true) do |form| %>
         <%= render 'shared/error_messages', object: form.object %>
         

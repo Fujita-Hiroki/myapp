@@ -85,13 +85,63 @@
   border-radius: 50%;
 }
 
+.container {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.title {
+  margin-bottom: 5rem;
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: -1rem;
+      font-weight: normal;
+    }
+}
+
+.form-control {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-picture {
+  margin-bottom: 2rem;
+}
+
+.check-box {
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.field {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.form-check-input {
+  margin-left: 0.1rem;
+}
+
+.form-check-label {
+  margin-left: 1.1rem;
+}
+
 /* about */
 
 .about {
   text-align: center;
   h1 {
     position: relative;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     padding-top: 4rem;
   }
   p {
@@ -131,40 +181,6 @@
   z-index: -1;  
 }
 
-/* signup */
-
-.signup-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-    p {
-      font-size: 0.8rem;
-      margin-top: -1.5rem;
-    }
-}
-
-.signup-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.form-control {
-  margin-bottom: 2rem;
-  font-size: 0.8rem;
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.field {
-  margin-bottom: 2rem;
-  font-size: 0.8rem;
-}
-
 /* error messages */
 
 .error_massages {
@@ -186,86 +202,6 @@
 .alert-form-extend {
   margin: 1rem;
   text-align: center;
-}
-
-/* login */
-
-.login-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-    p {
-      font-size: 0.8rem;
-      margin-top: -1.5rem;
-    }
-}
-
-.login-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.form-check-input {
-  margin-left: 0.1rem;
-}
-
-.form-check-label {
-  margin-left: 1.1rem;
-}
-
-/* edit */
-
-.edit-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-}
-
-.edit-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-/* forgotpass */
-
-.forgotpass-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-    p {
-      font-size: 0.8rem;
-      margin-top: -1.5rem;
-    }
-}
-
-.forgotpass-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-/* resetpass */
-
-.resetpass-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-    p {
-      font-size: 0.8rem;
-      margin-top: -1.5rem;
-    }
-}
-
-.resetpass-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
 /* show microposts */
@@ -313,41 +249,6 @@
   border-radius: 50%;
 }
 
-/* question microposts */
-
-.question-title {
-  padding-left: 2rem;
-    h5 {
-      font-weight: bold;
-    }
-}
-
-.question-container {
-  padding-top: 4rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.form-control {
-  margin-bottom: 2rem;
-  font-size: 0.8rem;
-}
-
-.form-picture {
-  margin-bottom: 2rem;
-}
-
-.check-box {
-  p {
-    margin-bottom: 1rem;
-  }
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 2rem;
-}
-
 /* comment */
 
 .index-comment {
@@ -361,6 +262,20 @@
 
 .comment-label {
   margin-top: 2rem;
+}
+
+/* show users */
+
+.avatar {
+  margin: 3rem 0;
+  text-align: center;
+    h5 {
+      margin: 2rem 0;
+    }
+}
+
+.user-post-index {
+  margin: 0 0 2rem 3rem;
 }
 
 /* footer */
