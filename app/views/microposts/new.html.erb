@@ -18,12 +18,14 @@
         <%= form.file_field :picture, class: 'form-picture' %> 　　
 　　　  
         <div class="check-box">
-          <p>質問科目　*科目を1つ選択してください</p>
+          <p>質問科目　*必ず科目を1つ選択してください</p>
           <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :subject) do |tag| %>
-            <%= tag.label do %>
-              <%= tag.check_box %>
-              <%= tag.text %>
-            <% end %>     
+            <div class="cb">
+              <%= tag.label do %>
+                <%= tag.check_box %>
+                <%= tag.text %>
+              <% end %>
+            </div>   
           <% end %>
         </div>
         <%= form.submit "質問する", class: "btn btn-info btn-lg form-submit" %>
