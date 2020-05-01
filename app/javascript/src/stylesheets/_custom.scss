@@ -31,9 +31,25 @@
 
 .jumbotron {
   background-color: #ddffff;
+  text-align: center;
+}
+
+.home-container {
+  display: inline-block;
+  h4 {
+    font-family: 'Avenir', serif;
+  }
   p {
     font-size: 0.75rem;
+    font-family: 'Avenir', serif;
   }
+}
+
+.home-img {
+  margin-left: 0.5rem;
+  opacity: 50%;
+  max-width: 13rem;
+  height: auto;
 }
 
 .no-line {
@@ -117,6 +133,10 @@
   }
 }
 
+.cb {
+  display: block;
+}
+
 .form-submit {
   width: 100%;
   margin-top: 2rem;
@@ -179,6 +199,31 @@
   margin: auto; 
   top: 4.5rem;   
   z-index: -1;  
+}
+
+/* home */
+
+.home-index {
+  margin: 0 1rem;
+  .button-wrapper-left {
+    text-align: center;
+    .btn {
+      width: 100%;
+    }
+    .search-form {
+      margin: 1rem 0;
+      width: 100%;
+    }
+  }
+  .button-wrapper-right {
+    width: 85%;
+    bottom: 5rem;
+    position: fixed;
+    .btn {
+      width: 18.5%;
+      margin: 0 auto;
+    }
+  }
 }
 
 /* error messages */
