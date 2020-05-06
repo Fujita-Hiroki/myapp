@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe SessionsHelper, type: :helper do
 
+  include ApplicationHelpers
+
   let(:user) { create(:user) }
 
   describe "#current_user" do

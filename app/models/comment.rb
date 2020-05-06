@@ -5,7 +5,7 @@ class Comment < ApplicationRecord
   validates :user_id, presence: true
   validates :comment, length: { maximum: 1000 }
   validates :only_micropost_id, presence: true
-  validate :validate_picture
+  validate :validate_pictures
 
   def resize_pictures
     return self.pictures.variant(resize: '1000x1000').processed
