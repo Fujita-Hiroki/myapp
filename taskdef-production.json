@@ -1,4 +1,6 @@
 {
+  "taskDefinition": {
+    "family": "myapp",
     "containerDefinitions": [
       {
         "name": "nginx",
@@ -26,6 +28,6 @@
         "memory": 256,
         "essential": false
       }
-    ],
-    "family": "myapp"
+    ]
   }
+}
