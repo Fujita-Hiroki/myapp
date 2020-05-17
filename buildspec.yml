@@ -1,27 +1,30 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      docker: 18
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - NGINX_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$NGINX_REPO_NAME
+      - RAILS_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$RAILS_REPO_NAME
+      - IMAGE_TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --no-cache -t $RAILS_REPO_NAME:$IMAGE_TAG .
-      - docker build --no-cache -t $NGINX_REPO_NAME:$IMAGE_TAG .
-      - docker tag $RAILS_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$RAILS_REPO_NAME:$IMAGE_TAG
-      - docker tag $NGINX_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$NGINX_REPO_NAME:$IMAGE_TAG
+      - docker build --no-cache -t $NGINX_IMAGE_URI:$IMAGE_TAG .
+      - docker build --no-cache -t $RAILS_IMAGE_URI:$IMAGE_TAG .
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...$AWS_ACCOUNT_ID....$RAILS_REPO_NAME:$IMAGE_TAG
-      - echo Pushing the Docker image...$AWS_ACCOUNT_ID....$NGINX_REPO_NAME:$IMAGE_TAG
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$RAILS_REPO_NAME:$IMAGE_TAG
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$NGINX_REPO_NAME:$IMAGE_TAG
-      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$RAILS_REPO_NAME
-      - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$NGINX_REPO_NAME
-      - echo "[{\"name\":\"${CONTAINAR_NAME}\",\"imageUri\":\"${REPOSITORY_URI}:${IMAGE_TAG}\"}]" > imagedefinitions.json
+      - echo Pushing the Docker images...
+      - docker push $NGINX_IMAGE_URI:$IMAGE_TAG
+      - docker push $RAILS_IMAGE_URI:$IMAGE_TAG
+      - cat taskdef-production.json | sed -e s@\<NGINX_IMAGE_NAME\>@$NGINX_IMAGE_URI:$IMAGE_TAG@ -e s@\<RAILS_IMAGE_NAME\>@$RAILS_IMAGE_URI:$IMAGE_TAG@ > taskdef.json
 artifacts:
-  files: imagedefinitions.json
+  files:
+      - appspec.yml
+      - taskdef.json
