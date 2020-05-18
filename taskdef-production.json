@@ -1,0 +1,33 @@
+{
+  "taskDefinition": {
+    "family": "myapp",
+    "containerDefinitions": [
+      {
+        "name": "nginx",
+        "image": "<NGINX_IMAGE_NAME>",
+        "cpu": 256,
+        "portMappings": [
+          {
+            "containerPort": 80,
+            "hostPort": 80
+          }
+        ],
+        "memory": 256,
+        "essential": true
+      },
+      {
+        "name": "rails",
+        "image": "<RAILS_IMAGE_NAME>",
+        "cpu": 256,
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "hostPort": 3000
+          }
+        ],
+        "memory": 256,
+        "essential": false
+      }
+    ]
+  }
+}
