@@ -1,0 +1,7 @@
+aws:
+  access_key_id: AKIAZBXBSVX4HVHGIX
+  secret_access_key: 4pqGYvJ4qtmGwT9f9f2ZPEtRPOSa2nBBri1RqWy
+  s3:
+    region: ap-northeast-1
+    bucket: myapp-s3-bucket
+
