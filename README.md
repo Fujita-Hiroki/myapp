@@ -1,25 +1,14 @@
-# README
+# StudySupport
+勉強の質問が無料でできるWebアプリです。全国の小学生、中学生、高校生の利用を想定しており、質問への回答はどなたでも可能です。転職用のポートフォリオとして作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # myapp
+リンク
+テストユーザーとしてログイン
+・ログインページからかんたんログインを押して下さい。
+・質問や回答機能もご利用頂けます。
+
+#特に見て頂きたい箇所
+・Dockerを使い、ECS/ECRで本番環境をEC2インスタンス内で実行している
+・AWSを使いALBを通すことで常時SSL通信を行っている
+・Codepipelineを使いCDラインを構築している
+・
