@@ -22,9 +22,9 @@
 
 **サーバーサイド:**
 
- * mysql: 5.7
- * ruby: 2.6.3
-   * rails: 5.2.3
+ * mysql:5.7
+ * ruby:2.7.0
+   * rails:6.0.0
  * AWS
    * ECS
    * ECR
@@ -42,12 +42,23 @@
    * CodeBuild
    * CodeDeploy
  
+**フロントエンド:**
+
+ * nginx:1.15.8
+ 
 **gem:**
  
- 
- 
-**フロントエンド:**
- 
+ * sassc-rails
+ * webpacker
+ * bcrypt
+ * rails-i18n
+ * kaminari
+ * kaminari-bootstrap
+ * bootsnap
+ * aws-sdk-s3
+ * rubocop
+ * rubocop-rails
+ * rspec-rails 
  
 ## クラウドアーキテクチャ
  
@@ -55,7 +66,7 @@
 ## 機能一覧
 * 質問一覧表示機能
 * 質問詳細表示機能
-* 質問投稿機能(編集機能なども含む)
+* 質問投稿機能（編集機能なども含む）
 * 回答投稿機能
 * 質問削除機能
 * 回答削除機能
@@ -65,9 +76,9 @@
 * ユーザーログアウト機能
 * 画像ファイルのアップロード機能
 * ページネーション機能
-* 単体テスト機能(Model,Controller)
-* 統合テスト機能(Request spec)
-* ブラウザテスト機能(System spec)
+* 単体テスト機能（Model,Controller）
+* 統合テスト機能（Request spec）
+* ブラウザテスト機能（System spec）
  
 ## 開発環境
  Windows 10 Home EditionのPCを使用しています。このOSではWindows自身が備える仮想環境（Hyper-V）が利用できないため、Oracle VM VirtualBox
