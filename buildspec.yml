@@ -10,7 +10,8 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
       - NGINX_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$NGINX_REPO_NAME
       - RAILS_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$RAILS_REPO_NAME
-      - IMAGE_TAG=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
       - echo Build started on `date`
@@ -23,8 +24,8 @@ phases:
       - echo Pushing the Docker images...
       - docker push $NGINX_IMAGE_URI:$IMAGE_TAG
       - docker push $RAILS_IMAGE_URI:$IMAGE_TAG
-      - printf '[{"name":"{NGINX_IMAGE_NAME}","imageUri":"%s"}]' $NGINX_IMAGE_URI > imagedefinitions.json
-      - printf '[{"name":"{RAILS_IMAGE_NAME}","imageUri":"%s"}]' $RAILS_IMAGE_URI > imagedefinitions.json
+      - printf '[{"name":"nginx","imageUri":"%s"}]' $NGINX_IMAGE_URI > imagedefinitions.json
+      - printf '[{"name":"rails","imageUri":"%s"}]' $RAILS_IMAGE_URI > imagedefinitions.json
 artifacts:
   files:
       - imagedefinitions.json 
