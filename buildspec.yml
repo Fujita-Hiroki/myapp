@@ -23,8 +23,8 @@ phases:
       - echo Pushing the Docker images...
       - docker push $NGINX_IMAGE_URI:$IMAGE_TAG
       - docker push $RAILS_IMAGE_URI:$IMAGE_TAG
-      - cat taskdef-production.json | sed -e s@\<NGINX_IMAGE_NAME\>@$NGINX_IMAGE_URI:$IMAGE_TAG@ -e s@\<RAILS_IMAGE_NAME\>@$RAILS_IMAGE_URI:$IMAGE_TAG@ > imagedefinitions.json
+      - printf '[{"name":"{NGINX_IMAGE_NAME}","imageUri":"%s"}]' $NGINX_IMAGE_URI > imagedefinitions.json
+      - printf '[{"name":"{RAILS_IMAGE_NAME}","imageUri":"%s"}]' $RAILS_IMAGE_URI > imagedefinitions.json
 artifacts:
   files:
-      - appspec.yml
       - imagedefinitions.json 
