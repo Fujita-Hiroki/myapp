@@ -12,7 +12,9 @@
         <%= simple_format(comment.comment) %>
       </div>
       <div class="picture">
-        <%= comment.picture%>
+        <% comment.pictures.each do |picture| %>
+          <%= image_tag picture.variant(resize: '500x500').processed %>
+        <% end %>      
       </div>
       <div class="timestamp">
         <%= comment.created_at.strftime("%m/%d %H:%M") %>

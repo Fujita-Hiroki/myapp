@@ -19,9 +19,11 @@
         <%= simple_format(post.problem) %>
       </div>
       <% if post.pictures.attached? %>
-      <div class="picture">
-        <%= image_tag post.resize_pictures %>
-      </div>
+        <div class="picture">
+          <% post.pictures.each do |picture| %>
+            <%= image_tag picture.variant(resize: '100x100').processed %>
+          <% end %>      
+        </div>
       <% end %>
       <div class="timestamp">
         <%= post.created_at.strftime("%m/%d %H:%M") %>

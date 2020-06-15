@@ -14,8 +14,8 @@
         <%= form.label :problem, "不安な点や確認したいこと" %>
         <%= form.text_area :problem, class: 'form-control', placeholder: "具体的に分からないこと・不安な点・確認したいことなどを入力してください" %>
         
-        <%= form.label :picture, "添付画像" %>
-        <%= form.file_field :picture, class: 'form-picture' %> 　　
+        <%= form.label :pictures, "添付画像" %>
+        <%= form.file_field :pictures, multiple: true, class: 'form-picture' %> 　　
 　　　  
         <div class="check-box">
           <p>質問科目　*必ず科目を1つ選択してください</p>

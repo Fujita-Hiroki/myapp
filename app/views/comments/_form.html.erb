@@ -8,8 +8,8 @@
           <%= form.label :comment, "回答", class: 'comment-label' %>
           <%= form.text_area :comment, class: 'form-control', placeholder: "質問への回答やコメントを入力してください" %>
 
-          <%= form.label :picture, "添付画像" %>
-          <%= form.file_field :picture %>
+          <%= form.label :pictures, "添付画像" %>
+          <%= form.file_field :pictures, multiple: true, class: 'form-picture' %>
       
           <%= form.submit "回答する", class: "btn btn-info btn-lg form-submit" %>
         <% end %>

@@ -25,7 +25,9 @@
           <%= simple_format(@micropost.problem) %>
         </div>
         <div class="picture">
-          <%= @micropost.picture%>
+          <% @micropost.pictures.each do |picture| %>
+            <%= image_tag picture.variant(resize: '500x500').processed %>
+          <% end %>      
         </div>
         <div class="timestamp">
           <%= @micropost.created_at.strftime("%m/%d %H:%M") %>

@@ -9,25 +9,21 @@ class Micropost < ApplicationRecord
   validates :understanding, length: { maximum: 1000 }
   validates :problem, length: { maximum: 1000 }
   validates :only_user_id, presence: true
-  validate :validate_pictures
+  # validate :validate_pictures
   validates :tag_ids, presence: true
-
-  def resize_pictures
-    return self.pictures.variant(resize: '100x100').processed
-  end
 
   private
     def only_user_id
       understanding.presence or problem.presence or pictures.attached?
     end
 
-    def validate_pictures
-      if pictures.attached?
-        if !pictures.content_type.in?(%('image/jpeg image/jpg image/png image/gif'))
-          errors.add(:pictures, 'はjpeg, jpg, png, gif以外の投稿ができません')
-        elsif pictures.blob.byte_size > 5.megabytes
-          errors.add(:pictures, "のサイズが5MBを超えています")
-        end
-      end
-    end
+    # def validate_pictures
+    # if pictures.attached?
+      # if !pictures.content_type.in?(%('image/jpeg image/jpg image/png image/gif'))
+        # errors.add(:pictures, 'はjpeg, jpg, png, gif以外の投稿ができません')
+      # elsif pictures.blob.byte_size > 5.megabytes
+        # errors.add(:pictures, "のサイズが5MBを超えています")
+      # end
+    # end
+  # end
 end

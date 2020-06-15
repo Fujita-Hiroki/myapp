@@ -14,8 +14,8 @@
         <%= form.label :problem, "不安な点や確認したいこと" %>
         <%= form.text_area :problem, class: 'form-control', placeholder: "具体的に分からないこと・不安な点・確認したいことなどを入力してください" %>
 
-        <%= form.label :picture, "添付画像" %>
-        <%= form.file_field :picture %>
+        <%= form.label :pictures, "添付画像" %>
+        <%= form.file_field :pictures, multiple: true, class: 'form-picture' %>
      
         <%= form.submit "編集する", class: "btn btn-info btn-lg form-submit" %>
         <%= link_to "削除する", micropost_path, method: :delete, data: { confirm: "質問を削除しますか？", cancel: "キャンセル", commit: "削除する" }, title: "削除の確認", class: 'btn btn-danger btn-lg form-submit' %>
