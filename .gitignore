@@ -39,3 +39,5 @@ app/views/microposts/_index.html.erb
 rails
 config/credentials.yml.enc
 credentials:edit
+/aws
+/awscliv2.zip
