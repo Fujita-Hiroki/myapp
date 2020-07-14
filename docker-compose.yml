@@ -19,7 +19,7 @@ services:
       - log-data:/myapp/log
     ports:
       - "3000:3000"
-    links:  
+    depends_on:
       - db
     tty: true
     stdin_open: true
