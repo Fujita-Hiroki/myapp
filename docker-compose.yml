@@ -14,9 +14,7 @@ services:
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - .:/myapp
-      - public-data:/myapp/public
-      - tmp-data:/myapp/tmp
-      - log-data:/myapp/log
+      - sockets:/myapp/tmp/sockets
     ports:
       - "3000:3000"
     depends_on:
@@ -26,16 +24,14 @@ services:
     
   web:
     build:
-      context: containers/nginx
+      context: .
+      dockerfile: ./containers/nginx/Dockerfile
     volumes:
-      - public-data:/myapp/public
-      - tmp-data:/myapp/tmp
+      - sockets:/myapp/tmp/sockets
     ports:
       - "80:80"
     depends_on:
       - app
 volumes:
-  public-data:
-  tmp-data:
-  log-data:
   db-data:
+  sockets:
