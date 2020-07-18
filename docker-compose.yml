@@ -11,12 +11,14 @@ services:
 
   app:
     build: .
+<<<<<<< HEAD
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb "
+=======
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
+>>>>>>> 4983dc952dcb4382ab141f06d51584f30be80ce4
     volumes:
       - .:/myapp
-      - public-data:/myapp/public
-      - tmp-data:/myapp/tmp
-      - log-data:/myapp/log
+      - sockets:/myapp/tmp/sockets
     ports:
       - "3000:3000"
     depends_on:
@@ -29,14 +31,11 @@ services:
       context: .
       dockerfile: ./containers/nginx/Dockerfile
     volumes:
-      - public-data:/myapp/public
-      - tmp-data:/myapp/tmp
+      - sockets:/myapp/tmp/sockets
     ports:
       - "80:80"
     depends_on:
       - app
 volumes:
-  public-data:
-  tmp-data:
-  log-data:
   db-data:
+  sockets:

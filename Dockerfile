@@ -32,8 +32,7 @@ COPY . $APP_ROOT
 
 RUN mkdir -p tmp/sockets
 
-VOLUME /myapp/public
-VOLUME /myapp/tmp
+VOLUME /myapp/tmp/sockets
 EXPOSE  3000
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
