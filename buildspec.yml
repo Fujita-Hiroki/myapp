@@ -16,17 +16,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $NGINX_IMAGE_URI:$latest .
-      - docker build -t $RAILS_IMAGE_URI:$latest .
-      - docker tag $NGINX_REPO_NAME:latest $NGINX_IMAGE_URI:$IMAGE_TAG
-      - docker tag $RAILS_REPO_NAME:latest $RAILS_IMAGE_URI:$IMAGE_TAG
+      - docker build -t $NGINX_IMAGE_URI:$IMAGE_TAG -f ./containers/nginx/Dockerfile .
+      - docker build -t $RAILS_IMAGE_URI:$IMAGE_TAG -f ./Dockerfile . 
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $NGINX_IMAGE_URI:latest
       - docker push $NGINX_IMAGE_URI:$IMAGE_TAG
-      - docker push $RAILS_IMAGE_URI:latest
       - docker push $RAILS_IMAGE_URI:$IMAGE_TAG
       - printf '[{"name":"nginx","imageUri":"%s"}]' $NGINX_IMAGE_URI:$IMAGE_TAG > imagedefinitions.json
       - printf '[{"name":"rails","imageUri":"%s"}]' $RAILS_IMAGE_URI:$IMAGE_TAG > imagedefinitions.json
