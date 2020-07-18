@@ -8,8 +8,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
-      - NGINX_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$NGINX_REPO_NAME
-      - RAILS_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-northeast-1.amazonaws.com/$RAILS_REPO_NAME
+      - NGINX_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$NGINX_REPO_NAME
+      - RAILS_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$RAILS_REPO_NAME
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -17,11 +17,11 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $NGINX_IMAGE_URI:$IMAGE_TAG -f ./containers/nginx/Dockerfile .
-      - docker build -t $RAILS_IMAGE_URI:$IMAGE_TAG -f ./Dockerfile . 
+      - docker build -t $RAILS_IMAGE_URI:$IMAGE_TAG -f ./Dockerfile .
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker images...
+      - echo Pushing the Docker image...
       - docker push $NGINX_IMAGE_URI:$IMAGE_TAG
       - docker push $RAILS_IMAGE_URI:$IMAGE_TAG
       - printf '[{"name":"nginx","imageUri":"%s"}]' $NGINX_IMAGE_URI:$IMAGE_TAG > imagedefinitions.json
