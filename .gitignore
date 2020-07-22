@@ -41,3 +41,4 @@ config/credentials.yml.enc
 credentials:edit
 /aws
 /awscliv2.zip
+/environments/db.env
