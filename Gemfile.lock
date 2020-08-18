@@ -95,6 +95,10 @@ GEM
     data-confirm-modal (1.6.3)
       railties (>= 3.0)
     diff-lcs (1.3)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
@@ -300,6 +304,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   data-confirm-modal
+  dotenv-rails
   factory_bot_rails
   faker
   i18n (~> 1.8.3)
