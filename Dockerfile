@@ -36,7 +36,4 @@ RUN mkdir -p $APP_ROOT/tmp/sockets
 VOLUME $APP_ROOT/public
 VOLUME $APP_ROOT/tmp
 
-RUN yarn install --check-files
-RUN bundle exec rails assets:precompile
-
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
