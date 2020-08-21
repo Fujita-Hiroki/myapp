@@ -25,7 +25,8 @@ services:
     
   web:
     build:
-      context: containers/nginx
+      context: .
+      dockerfile: ./containers/nginx/Dockerfile
     volumes:
       - public-data:/opt/myapp/public
       - tmp-data:/opt/myapp/tmp
