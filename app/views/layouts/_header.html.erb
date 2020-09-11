@@ -1,37 +1,37 @@
 <header>
   <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="navbar-brand-extend">
-      <%= link_to image_tag('S.png', width: 15), root_path, class: "logo-img" %>
+      <%= link_to image_tag('/images/S.png', width: 15), root_path, class: "logo-img" %>
       <%= link_to "StudySupport", root_path, class: "logo-text" %>
     </div>
-    <div class="collapse navbar-collapse justify-content-end">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
       <% if logged_in? %>
         <li class="nav-item active">
-          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item" %> <!-- img入れる png -->
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-item" %>
         </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             プロフィール
           </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "過去にした質問", current_user, class: "dropdown-item" %></li>
-            <li><%= link_to "編集・設定", edit_user_path(current_user), class: "dropdown-item" %></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><%= link_to "過去にした質問", current_user, class: "dropdown-item" %></li>
+          <li><%= link_to "編集・設定", edit_user_path(current_user), class: "dropdown-item" %></li>
           </ul>
         </li>
       <% else %>
-          <li class="nav-item active">
-            <%= link_to "ログイン", login_path, class: "nav-item" %> <!-- img入れる png -->
-          </li>
-          <li class="nav-item active">
-            <%= link_to "新規登録", signup_path, class: "nav-item" %> <!-- img入れる png -->
-          </li>
+        <li class="nav-item active">
+          <%= link_to "ログイン", login_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "新規登録", signup_path, class: "nav-item" %>
+        </li>
       <% end %>
       </ul>
     </div>
   </nav>
 </header>
-

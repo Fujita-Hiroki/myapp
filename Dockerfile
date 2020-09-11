@@ -18,9 +18,9 @@ RUN curl -SL https://deb.nodesource.com/setup_12.x | bash
 RUN apt-get install -y nodejs --no-install-recommends chromium-driver
 RUN apt-get update && apt-get install -y default-mysql-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /myapp
+ENV APP_ROOT /opt/myapp
+RUN mkdir -p $APP_ROOT
 
-ENV APP_ROOT /myapp
 WORKDIR $APP_ROOT
 
 COPY Gemfile $APP_ROOT/Gemfile
@@ -30,10 +30,10 @@ RUN bundle install
 
 COPY . $APP_ROOT
 
-RUN mkdir -p tmp/sockets
+RUN mkdir -p $APP_ROOT/tmp/pids
+RUN mkdir -p $APP_ROOT/tmp/sockets
 
-VOLUME /myapp/public
-VOLUME /myapp/tmp
-EXPOSE  3000
+VOLUME $APP_ROOT/public
+VOLUME $APP_ROOT/tmp
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

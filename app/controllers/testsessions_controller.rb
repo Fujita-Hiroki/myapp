@@ -2,7 +2,7 @@ class TestsessionsController < ApplicationController
 
   def create 
     user = User.find_by(email: 'test@example.com')
-    log_in user
+    session[:user_id] = user.id
     flash[:success] = 'テストユーザーとしてログインしました'
     redirect_to user
   end

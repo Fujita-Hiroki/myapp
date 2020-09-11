@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="<%= image_path("favicon.ico") %>" rel="shortcut icon" />
+    <%= favicon_link_tag '/images/favicon.ico' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <%= render 'layouts/shim' %>
   </head>
   <body>
+    <div class="wrap">
     <header>
       <%= render 'layouts/header' %>
       <% flash.each do |message_type, message| %>
@@ -23,5 +25,6 @@
     <footer>  
       <%= render 'layouts/footer' %>
     </footer>
+    </div>
   </body>
 </html>

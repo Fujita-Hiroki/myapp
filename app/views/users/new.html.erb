@@ -30,7 +30,7 @@
           <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, size:"100x100", class:"avatar-circle" %>
           <% else %>
-            <%= image_tag ("default.png"), size:"100x100", class:"avatar-circle" %>
+            <%= image_tag ("/images/default.png"), size:"100x100", class:"avatar-circle" %>
           <% end %>
         </div>
 

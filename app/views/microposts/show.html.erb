@@ -24,7 +24,7 @@
         <div class="sentence">
           <%= simple_format(@micropost.problem) %>
         </div>
-        <div class="picture">
+        <div class="picture-show">
           <% @micropost.pictures.each do |picture| %>
             <%= image_tag picture.variant(resize: '500x500').processed %>
           <% end %>      
@@ -35,7 +35,7 @@
           <% if @micropost.user.avatar.attached? %>
             <%= image_tag @micropost.user.avatar, size:"20x20", class:"avatar-circle float-right" %>
           <% else %>
-            <%= image_tag ("default.png"), size:"20x20", class:"avatar-circle float-right" %>
+            <%= image_tag ("/images/default.png"), size:"20x20", class:"avatar-circle float-right" %>
           <% end %>
         </div>
       </div>  
