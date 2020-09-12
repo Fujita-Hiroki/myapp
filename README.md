@@ -64,7 +64,7 @@ https://studysupport.link/
  * rspec-rails 
  
 ## クラウドアーキテクチャ
-![20200913](https://user-images.githubusercontent.com/59565900/93004328-dcf6c400-f580-11ea-9b43-584b92efd60f.png)
+![20200913](https://user-images.githubusercontent.com/59565900/93004532-ce111100-f582-11ea-9546-c761cda9c135.png)
 
 CodePipelineを用いてGithubのmasterブランチへのプッシュをウェブフックにして、ECSの自動デプロイを実現しています。
 
