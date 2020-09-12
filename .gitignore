@@ -37,7 +37,7 @@ spec/systems/systems_layout_spec.rb
 app/javascript/src/application.scss
 app/views/microposts/_index.html.erb
 rails
-config/credentials.yml.enc
+!config/credentials.yml.enc
 credentials:edit
 /aws
 /awscliv2.zip
