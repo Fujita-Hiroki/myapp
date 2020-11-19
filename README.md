@@ -32,7 +32,6 @@
    * ALB
    * RDS(MySQL)
    * S3
-   * CloudFront
    * Route53
    * Certificate Manager
    * VPC
