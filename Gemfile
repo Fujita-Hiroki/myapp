@@ -20,7 +20,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "aws-sdk-s3", require: false
 gem 'mini_magick'
 gem 'data-confirm-modal'
-gem 'image_processing', '~> 1.11.0'
+gem 'image_processing', '~> 1.12.2'
 gem 'dotenv-rails'
 
 group :development, :test do
