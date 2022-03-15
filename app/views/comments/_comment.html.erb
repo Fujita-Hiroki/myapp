@@ -13,7 +13,7 @@
       </div>
       <div class="picture">
         <% comment.pictures.each do |picture| %>
-          <%= image_tag picture.variant(resize: '500x500').processed %>
+          <%= image_tag picture.variant(resize_to_limit: [500, 500]).processed %>
         <% end %>      
       </div>
       <div class="timestamp">
