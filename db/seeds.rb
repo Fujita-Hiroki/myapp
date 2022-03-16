@@ -19,12 +19,12 @@ User.create!(
   )
 end
 
-users = User.order(:created_at).take(5)
-50.times do
-  understanding = Faker::Lorem.sentence(word_count: 6)
-  problem = Faker::Lorem.sentence(word_count: 6)
-  users.each { |user| user.microposts.create!(understanding: understanding, problem: problem) }
-end
+#users = User.order(:created_at).take(5)
+#50.times do
+  #understanding = Faker::Lorem.sentence(word_count: 6)
+  #problem = Faker::Lorem.sentence(word_count: 6)
+  #users.each { |user| user.microposts.create!(understanding: understanding, problem: problem) }
+#end
 
 Tag.create([
     { subject: '英語' },
