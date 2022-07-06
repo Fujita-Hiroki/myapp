@@ -11,7 +11,8 @@ phases:
       - NGINX_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$NGINX_REPO_NAME
       - RAILS_IMAGE_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$RAILS_REPO_NAME
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      # - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - IMAGE_TAG=$LATEST
   build:
     commands:
       - echo Build started on `date`
