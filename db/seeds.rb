@@ -1,6 +1,13 @@
 User.create!(
-  name: "Example User",
-  email: "example@railstutorial.org",
+  # name: "Example User",
+  # email: "example@railstutorial.org",
+  # password: "foobar",
+  # password_confirmation: "foobar",
+  # activated: true
+
+  #かんたんログインのユーザー作成
+  name: "Test User",
+  email: "test@example.com",
   password: "foobar",
   password_confirmation: "foobar",
   activated: true
